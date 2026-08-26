@@ -1,0 +1,44 @@
+{
+  "sku": [
+    "sku",
+    "product id",
+    "sku code",
+    "商品编号"
+  ],
+  "upc": [
+    "upc",
+    "upc code",
+    "barcode",
+    "条码"
+  ],
+  "product_name": [
+    "product name",
+    "title",
+    "商品名称"
+  ],
+  "brand": [
+    "brand",
+    "品牌"
+  ],
+  "material": [
+    "material",
+    "材质"
+  ],
+  "color": [
+    "color",
+    "颜色"
+  ],
+  "size": [
+    "size",
+    "尺寸"
+  ],
+  "source_url": [
+    "walmart url",
+    "product link",
+    "商品链接"
+  ],
+  "notes": [
+    "notes",
+    "备注"
+  ]
+}
