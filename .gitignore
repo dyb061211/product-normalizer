@@ -7,3 +7,7 @@ __pycache__/
 logs/*.log
 data/input/*.xlsx
 data/output/*.xlsx
+.env
+data/vectorstore/
+*.db
+data/input/*.txt
