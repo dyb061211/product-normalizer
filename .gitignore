@@ -11,3 +11,4 @@ data/output/*.xlsx
 data/vectorstore/
 *.db
 data/input/*.txt
+data/checkpoints/

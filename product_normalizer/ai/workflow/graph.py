@@ -3,7 +3,7 @@ from product_normalizer.ai.workflow.nodes import route_request,direct_answer,rag
 from product_normalizer.ai.workflow.routers import route_by_request,should_continue_tools
 from product_normalizer.ai.workflow.state import WorkflowState
 
-def build_workflow_graph():
+def build_workflow_graph(checkpointer=None):
     builder=StateGraph(WorkflowState)
     builder.add_node("route_request",route_request)
     builder.add_node("direct_answer",direct_answer)
@@ -38,4 +38,6 @@ def build_workflow_graph():
     builder.add_edge("tools","tool_llm")
     builder.add_edge("max_rounds_error","finalize")
     builder.add_edge("finalize",END)
-    return builder.compile()
+    return builder.compile(
+        checkpointer=checkpointer
+    )

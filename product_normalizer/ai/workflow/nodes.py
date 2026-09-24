@@ -6,6 +6,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from product_normalizer.rag.service import answer_question
 from langgraph.prebuilt import ToolNode
 from product_normalizer.ai.workflow.tools import TOOLS
+from product_normalizer.ai.workflow.context import build_model_context
 
 load_dotenv()
 
@@ -64,8 +65,9 @@ def route_request(state: WorkflowState):
     }
 
 def direct_answer(state: WorkflowState):
-   response=model.invoke(state["user_query"])
-   return {
+    model_messages=build_model_context(state["messages"])
+    response=model.invoke(model_messages)
+    return {
        "messages":[response],
        "answer":response.content,
        "status":"success"
@@ -113,5 +115,6 @@ def max_rounds_error(state:WorkflowState):
         "error_type":"max_rounds_error",
         "error_message":"Maximum number of rounds reached.",
     }
+
 
 
