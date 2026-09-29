@@ -12,3 +12,4 @@ data/vectorstore/
 *.db
 data/input/*.txt
 data/checkpoints/
+*.egg-info/
