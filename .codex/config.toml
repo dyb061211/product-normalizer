@@ -1,0 +1,23 @@
+[agents.run_investigator]
+description="这是专门用来查看run-processing的状态、validation issues和相关运行事实和证据，不负责源码调查，不负责修改代码"
+config_file="agents/run-investigator.toml"
+
+[agents.code_explorer]
+description = """
+A read-only source code investigation agent for the product-normalizer project.
+
+Use this agent when the task requires locating, reading, and tracing source code
+related to a specific implementation question, such as where validation rules
+are implemented, how validation issues are generated, how data flows between
+modules, or where results are persisted.
+
+This agent is responsible for source-code evidence only.
+
+Do not use this agent to:
+- investigate the real runtime status or issues of a processing run
+- query real business data from SQLite
+- modify source code
+- fix bugs
+- refactor code
+"""
+config_file = "agents/code-explorer.toml"
